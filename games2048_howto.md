@@ -8,3 +8,6 @@
 ## HOW TO PLAY 2048
 run the 2048ui file in ui folder and you're set.
 
+more on [About the 2048 game](https://en.wikipedia.org/wiki/2048_(video_game))
+
+
