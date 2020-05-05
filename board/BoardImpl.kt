@@ -2,6 +2,21 @@ package board
 
 import board.Direction.*
 
+open class MySquareBoard(final override val width: Int) : SquareBoard {
+    protected var cells : Array<Array<Cell>>
+
+    init {
+        if (width <= 0) throw IllegalArgumentException()
+
+        cells = Array(width) { Array(width){Cell(0, 0)}}
+        for (i in 0 until width) {
+            val rowCells : Array<Cell> = Array(width) { Cell(0, 0) }
+            for (j in 0 until width) {
+                rowCells[j] = Cell(i + 1, j + 1)
+            }
+            cells[i] = rowCells
+        }
+    }
 
     override fun getCellOrNull(i: Int, j: Int): Cell? {
         return if (i - 1 in 0 until width && j - 1 in 0 until width) cells[i - 1][j - 1] else null
